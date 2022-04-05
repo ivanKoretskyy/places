@@ -13,7 +13,7 @@ export const User: React.FC<UserProps> = ({ user }) => {
     return (
         <Link to={link} className={styles.link}>
           <div className={styles.container}>
-            <img src={imageSrc}/>
+            <img src={imageSrc} width={200} height={300}/>
             <div> {user.name}</div>
             <div> {user.address.city}</div>
             <div> {user.email}</div>

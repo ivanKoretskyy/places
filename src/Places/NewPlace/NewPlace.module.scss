@@ -5,6 +5,9 @@
     border-radius: 4px;
     color: white;
     font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .link {
@@ -12,11 +15,17 @@
 }
 
 .mapContainer {
+   
     width: 600px;
     max-width: 100%;
     min-height: 500px;
 }
 
 .mapLabel {
+    width: 200px;
+    height: 200px;
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    display: flex
 }

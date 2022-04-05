@@ -7,14 +7,21 @@ import styles from './Users.module.scss';
 export const Users: React.FC<{}> = () => {
 
     const [users, setUsers] = useState<User[] | null>(null);
+    const [loading, setLoading] = useState(false);
     useEffect(() => {
-        getUsers().then(res => setUsers(res.data))
+        setLoading(true);
+        getUsers().then(res => setUsers(res.data)).finally(() => setLoading(false))
     }, [])
 
 
     return (
         <div className={styles.container}> 
-            {users?.length ? <UsersList list={users}/> : <div>NO yesers found</div>}
+            {loading
+                ? (<div>loading</div>)
+                : users?.length
+                    ? <UsersList list={users}/>
+                    : <div>NO yesers found</div>
+            }
         </div>
         )
 }
