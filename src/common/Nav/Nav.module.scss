@@ -3,15 +3,13 @@
     height: 40px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .burger {
     @media screen and (min-width: 720px){
         display: none;
     }
-    position: fixed;
-    top: 20;
-    left: 20;
     z-index: 3;
 }
 
@@ -38,6 +36,10 @@
     &.isActive {
         color:slateblue;
     }
+}
+
+.login {
+    align-self: flex-end;
 }
 
 .desctopNavContainer {

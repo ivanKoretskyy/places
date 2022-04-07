@@ -1,21 +1,18 @@
 import './App.scss';
-import { BrowserRouter as Router, Link, Route, Routes} from 'react-router-dom';
-import { Users } from './Users/Users';
-import { Places } from './Places/Places';
-import { NewUser } from './Users';
+import { BrowserRouter as Router} from 'react-router-dom';
 import { Nav } from './common/Nav/Nav';
+import { AuthContextProvider } from './context/AuthContext';
+import { Pages } from './Pages';
 
 function App() {
   return (
-   <Router>
-    <Nav/>
-     <Routes>
-       <Route path='/places' element={<Places/>} />
-       <Route path='/' element={<Users/>} />
-       <Route path='/users/:userId/places' element={<Places/>} />
-       <Route path='/users/new' element={<NewUser/>} />
-     </Routes>
-   </Router>
+    <AuthContextProvider>
+      <Router>
+        <Nav/>
+        <Pages/>
+      </Router>
+    </AuthContextProvider>
+
   );
 }
 
